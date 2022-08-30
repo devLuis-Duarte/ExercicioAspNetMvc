@@ -1,11 +1,13 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ExemploAspNetMvc.Models;
+using Calculadora.Models;
 
-namespace ExemploAspNetMvc.Controllers;
+namespace Calculadora.Controllers;
 
 public class HomeController : Controller
 {
+    
+
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -18,29 +20,11 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult PrimeiraAction()
-    {
-        return View();
-    }
-
     public IActionResult Privacy()
     {
         return View();
     }
-     public string TesteQueryString([FromQuery] string q, string nome)
-    {
-        return $"Chegou aqui {q} e {nome}";
-    }
-
-    public string TesteForm([FromForm] UserRequest userRequest)
-    {
-        return $"Nome: {userRequest.Nome}, Email: {userRequest.Email}";
-    }
-
-    public IActionResult Form()
-    {
-        return View();
-    }
+    
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
